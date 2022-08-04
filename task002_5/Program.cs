@@ -1,5 +1,7 @@
 ﻿// Напишите программу замены элементов массива: отрицательные замените на положительные и наоборот.
 
+int[] arrey = GetArrey(12, -9, 9);
+
 int[] GetArrey(int size, int min, int max)
 {
     int[] result = new int[size];
@@ -7,20 +9,19 @@ int[] GetArrey(int size, int min, int max)
     {
         result[i] = new Random().Next(min, max + 1);
     }
+    Console.WriteLine("Массив: {0}{1}{2}", "[", String.Join(", ", result), "]");
     return result;
 }
-int[] arrey = GetArrey(12, -9, 9);
-    for (int i = 0; i < arrey.Length; i++)
-        {
-            Console.Write(arrey[i] + " ");
-        }
-    Console.WriteLine();
-    void Print (int[] ar)
+
+    
+    void Reverse ()
     {
-        for (int i = 0; i < ar.Length; i++)
+        for (int i = 0; i < arrey.Length; i++)
         {
-            ar[i] *= -1;
-            Console.Write(ar[i] + " ");
+            arrey[i] *= -1;
+            
         }
     }
-    Print (arrey);
+    Reverse ();
+    Console.WriteLine();
+    Console.WriteLine("Массив: {0}{1}{2}", "[", String.Join(", ", arrey), "]");
